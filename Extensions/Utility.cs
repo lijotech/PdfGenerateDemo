@@ -14,7 +14,7 @@ namespace PdfGenerate.Extensions
             DataTable table = new DataTable();
             for (int d = 0; d <= columsNumber; d++)
             {
-                table.Columns.Add(RandomName(), typeof(string));
+                table.Columns.Add("Column" + d, typeof(string));
             }
 
             for (int r = 0; r <= rowsCount; r++)

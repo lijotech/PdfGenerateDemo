@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PdfGenerate.Services;
 
 namespace PdfGenerate
 {
@@ -26,7 +27,7 @@ namespace PdfGenerate
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddScoped<IPdfGenerateService, PdfGenerateService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
