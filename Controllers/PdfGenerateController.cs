@@ -21,12 +21,12 @@ namespace PdfGenerate.Controllers
             _pdfGenerateService = pdfGenerateService;
         }
 
-        [HttpGet("GeneratePdfFirstCase")]
-        public async Task<IActionResult> GeneratePdfFirstCase()
+        [HttpGet("GeneratePdf")]
+        public async Task<IActionResult> GeneratePdf()
         {
             try
             {
-                var result = await _pdfGenerateService.GeneratePdfFirstCase(Utility.GenerateDatatableWithData(4,3));
+                var result = await _pdfGenerateService.GeneratePdf(Utility.GenerateDatatableWithData(4,3));
 
                 return File(result.Attachment, result.MimeType, result.FileName);               
             }

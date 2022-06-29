@@ -9,6 +9,6 @@ namespace PdfGenerate.Services
 {
     public interface IPdfGenerateService
     {
-        Task<FileDownloadDto> GeneratePdfFirstCase(DataTable dataTable);
+        public Task<FileDownloadDto> GeneratePdf(DataTable dataTable);
     }
 }
