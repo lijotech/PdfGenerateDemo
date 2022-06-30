@@ -182,11 +182,12 @@ namespace PdfGenerate.Services
             return cell;
         }
 
-        private static Cell CreateImageCell(string path,
-            VerticalAlignment cellVerticalAlignment,
-            int rowSpan = 0,
-            int colSpan = 0,
-            float percentageImageWidth = 100)
+        private static Cell CreateImageCell(
+        string path,
+        VerticalAlignment cellVerticalAlignment,
+        int rowSpan = 0,
+        int colSpan = 0,
+        float percentageImageWidth = 100)
         {
             Image img = new Image(ImageDataFactory.Create(path));
             img.SetWidth(UnitValue.CreatePercentValue(percentageImageWidth));
@@ -196,23 +197,21 @@ namespace PdfGenerate.Services
         }
 
         public static Cell FormattedEmptyCell(
-          Color cellBackgroudColor,
-          Color cellBorderColor,
-          float cellBorderWidth = 0.6f,
-          int rowSpan = 0,
-          int colSpan = 0,
-          float opacity = 1f)
+        Color cellBackgroudColor,
+        Color cellBorderColor,
+        float cellBorderWidth = 0.6f,
+        int rowSpan = 0,
+        int colSpan = 0,
+        float opacity = 1f)
         {
 
             Cell cellFirst = new Cell(rowSpan, colSpan);
-
             cellFirst.SetBorder(Border.NO_BORDER);
             cellFirst.SetBorderLeft(new SolidBorder(cellBorderColor, cellBorderWidth));
             cellFirst.SetBorderBottom(new SolidBorder(cellBorderColor, cellBorderWidth));
             cellFirst.SetBorderTop(new SolidBorder(cellBorderColor, cellBorderWidth));
             cellFirst.SetBorderRight(new SolidBorder(cellBorderColor, cellBorderWidth));
             cellFirst.SetBackgroundColor(cellBackgroudColor, opacity);
-
             return cellFirst;
         }
 
